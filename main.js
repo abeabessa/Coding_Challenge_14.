@@ -39,3 +39,8 @@ function displayTickets(tickets) {
         ticketsContainer.appendChild(ticketDiv);
     });
 }
+function displayError(message) {
+    errorMessageDiv.innerText = message;
+    errorMessageDiv.style.color = 'red';
+}
+document.addEventListener('DOMContentLoaded', fetchTickets);
