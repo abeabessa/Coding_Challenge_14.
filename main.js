@@ -22,3 +22,20 @@ async function fetchTickets() {
         console.log('Fetch operation completed');
     }
 }
+function displayTickets(tickets) {
+    ticketsContainer.innerHTML = ''; // Clear any previous content
+
+    tickets.forEach(ticket => {
+        const ticketDiv = document.createElement('div');
+        ticketDiv.classList.add('ticket');
+
+        ticketDiv.innerHTML = `
+            <h3>Ticket ID: ${ticket.id}</h3>
+            <p><strong>Customer Name:</strong> User ${ticket.userId}</p>
+            <p><strong>Issue Description:</strong> ${ticket.title}</p>
+            <p><strong>Details:</strong> ${ticket.body}</p>
+        `;
+        
+        ticketsContainer.appendChild(ticketDiv);
+    });
+}
